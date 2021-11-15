@@ -1,0 +1,50 @@
+import React from "react";
+import { Box, Link, Center, NativeBaseProvider } from "native-base";
+export const Example = () => {
+  const [state, setState] = React.useState(false);
+
+  const toggleState = () => {
+    setState(!state);
+  };
+
+  return (
+    <>
+      <Box
+        bg="primary.500"
+        _text={{
+          fontSize: "md",
+          fontWeight: "medium",
+          color: "warmGray.50",
+          letterSpacing: "lg",
+        }}
+      >
+        Welcome To Home Page!
+      </Box>
+      <Box h="100" w="100" bg={state ? "emerald.500" : "indigo.500"} />
+      <Link onPress={toggleState} mt="8">
+        <Box
+          px="3"
+          py="2"
+          bg="primary.400"
+          rounded="sm"
+          _text={{
+            color: "white",
+            fontWeight: "medium",
+          }}
+        >
+          Change Color
+        </Box>
+      </Link>
+    </>
+  );
+};
+
+export default () => {
+  return (
+    <NativeBaseProvider>
+      <Center flex={1} px="3">
+        <Example />
+      </Center>
+    </NativeBaseProvider>
+  );
+};
