@@ -1,11 +1,15 @@
 import React from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
 import { baseURL } from "../stores/instance";
+// import styles from "../../styles";
 
-const ShopItem = ({ shop }) => {
+const ShopItem = ({ shop, navigation }) => {
+  console.log(shop);
   return (
     <View>
-      <Text>{shop.name}</Text>
+      <Text onPress={() => navigation.navigate("ShopDetail", { shop: shop })}>
+        {shop.name}
+      </Text>
       <Image
         source={{ uri: baseURL + shop.image }}
         style={{ width: 50, height: 50 }}
