@@ -6,12 +6,12 @@ import ShopList from "../ShopList";
 import ShopDetail from "../ShopDetail";
 
 const navigation = () => {
-    const (Navigator, Screen) = createStackNavigator();
-    return (
-        <Navigator initialRouteName="Home">
-            <Screen name="Home" component={Home}/>
-            <Screen name="ShopList" component={ShopList}/>
-            {/* <Screen name="ShopDtail" component={ShopList}/> */}
-        </Navigator>
-    )
-}
+  const { Navigator, Screen } = createStackNavigator();
+  return (
+    <Navigator initialRouteName="Home">
+      <Screen name="Home" component={Home} />
+      <Screen name="ShopList" component={ShopList} />
+      {/* <Screen name="ShopDtail" component={ShopList}/> */}
+    </Navigator>
+  );
+};

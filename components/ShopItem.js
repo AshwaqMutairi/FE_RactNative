@@ -1,8 +1,8 @@
 import React from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
-import { baseURL } from "../../stores/instance";
+import { baseURL } from "../stores/instance";
 
-function ShopItem({ shop }) {
+const ShopItem = ({ shop }) => {
   return (
     <View>
       <Text>{shop.name}</Text>
@@ -12,7 +12,7 @@ function ShopItem({ shop }) {
       />
     </View>
   );
-}
+};
 
 export default ShopItem;
 
