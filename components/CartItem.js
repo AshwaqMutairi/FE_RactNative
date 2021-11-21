@@ -2,6 +2,7 @@ import React from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
 import { Center, HStack, VStack, Box, Avatar } from "native-base";
 import { baseURL } from "../stores/instance";
+import NumericInput from "react-native-numeric-input";
 
 const CartItem = ({ item }) => {
   const product = item.product;
@@ -24,6 +25,16 @@ const CartItem = ({ item }) => {
           </Text>
           <Text>total: {item.quantity * item.product.price} KD</Text>
         </VStack>
+
+        <NumericInput
+          rounded
+          totalHeight={30}
+          totalWidth={60}
+          initValue={1}
+          minValue={1}
+          maxValue={100}
+          iconSize={40}
+        />
       </HStack>
     </Box>
   );

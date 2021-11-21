@@ -1,19 +1,22 @@
-import { Button } from "native-base";
 import React from "react";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+import { StyleSheet, View } from "react-native";
+import { Button } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import { StyleSheet } from "react-native";
 
-const CartButton = ({ navigation }) => {
-  //   const navigation = useNavigation();
+const CartButton = () => {
+  const navigation = useNavigation();
   return (
-    <Icon
-      size={30}
-      onPress={() => navigation.navigate("CartList")}
-      name="cart"
-      color="pink"
-      marginRight="30"
-    />
+    <View>
+      {/* <Button style={{ borderRadius: "50%", width: 40, height: 40 }}> */}
+      <Icon
+        style={{ color: "pink", marginRight: 30 }}
+        size={30}
+        name="cart"
+        onPress={() => navigation.navigate("CartList")}
+      />
+      {/* </Button> */}
+    </View>
   );
 };
 
