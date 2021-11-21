@@ -4,12 +4,14 @@ import { createStackNavigator } from "@react-navigation/stack";
 import Home from "../Home";
 import ShopList from "../ShopList";
 import ShopDetail from "../ShopDetail";
+import CartList from "../CartList";
 
 const Navigation = () => {
   const { Navigator, Screen } = createStackNavigator();
   return (
     <Navigator
-      initialRouteName="Home"
+      //   initialRouteName="Home"
+      initialRouteName="CartList"
       screenOptions={{
         headerTintColor: "white",
         headerStyle: {
@@ -34,8 +36,8 @@ const Navigation = () => {
         name="ShopList"
         component={ShopList}
         options={({ navigation }) => ({
-          title: "Shops",
-          //   headerRight: () => <Settings navigation={navigation} />,
+          title: "choose a shop",
+          headerRight: () => <CartButton />,
         })}
       />
       <Screen
@@ -47,6 +49,7 @@ const Navigation = () => {
           };
         }}
       />
+      <Screen name="CartList" component={CartList} />
     </Navigator>
   );
 };
