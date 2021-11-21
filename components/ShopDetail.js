@@ -13,9 +13,9 @@ const ShopDetail = ({ navigation, route }) => {
     <View style={styles.shopDetailWrapper}>
       {/* <Text style={styles.title}>{shop.name}</Text> */}
       <Text style={styles.shopDetailTitle}>{shop.name}</Text>
-      <Image source={{ uri: baseURL + shop.image }} style={styles.imageSize} />
+      {/* <Image source={{ uri: baseURL + shop.image }} style={styles.imageSize} /> */}
       <ProductList products={shop.products} />
-      <Button onPress={() => navigation.navigate("Home")} />
+      {/* <Button onPress={() => navigation.navigate("Home")} /> */}
     </View>
   );
 };

@@ -5,13 +5,14 @@ import Home from "../Home";
 import ShopList from "../ShopList";
 import ShopDetail from "../ShopDetail";
 import CartList from "../CartList";
+import CartButton from "../buttons/CartButton";
 
 const Navigation = () => {
   const { Navigator, Screen } = createStackNavigator();
   return (
     <Navigator
-      //   initialRouteName="Home"
-      initialRouteName="CartList"
+      initialRouteName="Home"
+      // initialRouteName="CartList"
       screenOptions={{
         headerTintColor: "white",
         headerStyle: {
@@ -44,8 +45,10 @@ const Navigation = () => {
         name="ShopDetail"
         component={ShopDetail}
         options={({ route }) => {
+          const { shop } = route.params;
           return {
-            title: route.params.shop.name,
+            title: shop.name,
+            headerRight: () => <CartButton />,
           };
         }}
       />

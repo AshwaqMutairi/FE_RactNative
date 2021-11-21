@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text } from "native-base";
+import { View, Text, VStack, HStack } from "native-base";
 import ProductItem from "./ProductItem";
 
 const ProductList = ({ products }) => {
@@ -9,8 +9,12 @@ const ProductList = ({ products }) => {
 
   return (
     <View>
-      <Text>This is the shops list</Text>
-      {productList}
+      <VStack marginLeft="10" space={10}>
+        <Text marginLeft="100" bold color="gray.400">
+          products
+        </Text>
+        {productList}
+      </VStack>
     </View>
   );
 };
